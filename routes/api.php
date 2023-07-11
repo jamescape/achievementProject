@@ -15,6 +15,8 @@ use App\Http\Controllers\AchievementController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::delete('/user/{id}', [UserController::class, 'delete']);
+Route::put('/user/{id}', [UserController::class, 'update']);
+Route::get('/user/{id}', [UserController::class, 'show']);
+Route::post('/user', [UserController::class, 'store']);
+Route::get('/user', [UserController::class, 'index']);
